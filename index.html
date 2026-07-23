@@ -1,62 +1,115 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
+
 <head>
-<title>Summit Crown</title>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>SUMMIT CROWN</title>
 
 <style>
-body{
-background:#000;
-color:white;
-font-family:Arial,sans-serif;
-display:flex;
-justify-content:center;
-align-items:center;
-height:100vh;
-margin:0;
-}
 
-.login-box{
+body{
+margin:0;
+padding:0;
+font-family:Arial,sans-serif;
+background:black;
+color:#d4af37;
 text-align:center;
 }
 
+.container{
+padding:25px;
+}
+
+.logo{
+width:320px;
+max-width:90%;
+border-radius:15px;
+box-shadow:0 0 25px gold;
+margin-top:20px;
+}
+
+h1{
+font-size:42px;
+text-shadow:0 0 15px gold;
+}
+
+.login{
+background:#111;
+padding:25px;
+border-radius:20px;
+margin-top:30px;
+box-shadow:0 0 15px gold;
+}
+
 input{
-padding:12px;
+width:80%;
+padding:15px;
+margin-top:10px;
 border:none;
 border-radius:10px;
-margin-top:15px;
-width:250px;
+font-size:18px;
 }
 
 button{
-padding:12px 20px;
 margin-top:15px;
+padding:15px 30px;
+background:#d4af37;
 border:none;
 border-radius:10px;
+font-size:18px;
 cursor:pointer;
+font-weight:bold;
 }
 
 #site{
 display:none;
-text-align:center;
 }
+
+.card{
+margin-top:25px;
+padding:25px;
+background:#111;
+border-radius:20px;
+box-shadow:0 0 15px #d4af37;
+}
+
+p{
+font-size:18px;
+line-height:1.8;
+}
+
 </style>
 
 </head>
 
 <body>
 
-<div class="login-box" id="login">
+<div class="container">
+
+<img src="logo.jpg" class="logo">
 
 <h1>SUMMIT CROWN</h1>
-<p>Private Community Access</p>
 
-<input type="password" id="password"
-placeholder="Enter Password">
+
+<div class="login">
+
+<h2>LOGIN</h2>
+
+<input type="text" id="username"
+placeholder="Username">
 
 <br>
 
-<button onclick="checkPassword()">
-Login
+<input type="password" id="password"
+placeholder="Password">
+
+<br>
+
+<button onclick="login()">
+ENTER
 </button>
 
 </div>
@@ -64,28 +117,214 @@ Login
 
 <div id="site">
 
-<h1>Welcome to Summit Crown</h1>
+<div class="card">
 
-<p>Access Granted.</p>
+<h2>HOME</h2>
+
+<p>
+Welcome to Summit Crown.
+<br>
+Private Community.
+</p>
 
 </div>
 
 
+<div class="card">
+
+<h2>RULES</h2>
+
+<p>
+
+1. Ас саламу алейкум цукун уро?
+
+<br><br>
+
+2. ...
+
+<br><br>
+
+3. ...
+
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h2>ARTICLES</h2>
+
+<p>
+
+Здесь будут размещаться статьи проекта.
+
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h2>GUARANTOR</h2>
+
+<p>
+
+Summit Crown Guarantor Service.
+
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<h2>BEP-20 DEPOSIT</h2>
+
+<p>
+
+Сеть: BEP-20
+
+<br><br>
+
+Адрес кошелька:
+
+<br><br>
+
+0xXXXXXXXXXXXXXXXXXXXX
+
+<br><br>
+
+Минимальный депозит:
+
+<br>
+
+Укажешь сам.
+
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<h2>DEALS</h2>
+
+<p>
+
+Количество успешных сделок:
+
+<br><br>
+
+0
+
+<br><br>
+
+Общий объём:
+
+<br>
+
+0 USDT
+
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<h2>REVIEWS</h2>
+
+<p>
+
+★★★★★
+
+<br><br>
+
+Отзывы участников Summit Crown.
+
+<br><br>
+
+1.
+
+<br>
+
+2.
+
+<br>
+
+3.
+
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<h2>CONTACT ADMIN</h2>
+
+<p>
+
+Telegram:
+
+<br>
+
+@summitcrown
+
+<br><br>
+
+Session:
+
+<br>
+
+...
+
+<br><br>
+
+Email:
+
+<br>
+
+support@summitcrown.com
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+
+
 <script>
 
-function checkPassword(){
+function login(){
 
-var password =
+let user =
+document.getElementById("username").value;
+
+let pass =
 document.getElementById("password").value;
 
-if(password === "summit2026"){
 
-document.getElementById("login").style.display="none";
+if(user=="summitmember"
+&& pass=="summit2026"){
+
 document.getElementById("site").style.display="block";
 
-}else{
+document.querySelector(".login").style.display="none";
 
-alert("Wrong password");
+}
+
+else{
+
+alert("Wrong login or password.");
 
 }
 
