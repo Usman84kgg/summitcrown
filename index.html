@@ -5,53 +5,39 @@
 
 <style>
 body{
-margin:0;
-padding:0;
-background:#050505;
-font-family:Arial,sans-serif;
+background:#000;
 color:white;
+font-family:Arial,sans-serif;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+margin:0;
+}
+
+.login-box{
 text-align:center;
 }
 
-.logo{
-margin-top:80px;
-font-size:70px;
+input{
+padding:12px;
+border:none;
+border-radius:10px;
+margin-top:15px;
+width:250px;
 }
 
-h1{
-font-size:55px;
-margin-top:20px;
+button{
+padding:12px 20px;
+margin-top:15px;
+border:none;
+border-radius:10px;
+cursor:pointer;
 }
 
-p{
-color:#b3b3b3;
-font-size:20px;
-margin:20px;
-}
-
-.button{
-display:inline-block;
-margin-top:40px;
-padding:15px 40px;
-background:gold;
-color:black;
-text-decoration:none;
-font-weight:bold;
-border-radius:30px;
-font-size:20px;
-}
-
-.section{
-margin-top:100px;
-padding:30px;
-}
-
-.card{
-background:#101010;
-padding:25px;
-margin:20px;
-border-radius:25px;
-box-shadow:0 0 25px rgba(255,215,0,0.3);
+#site{
+display:none;
+text-align:center;
 }
 </style>
 
@@ -59,32 +45,53 @@ box-shadow:0 0 25px rgba(255,215,0,0.3);
 
 <body>
 
-<div class="logo">👑</div>
+<div class="login-box" id="login">
 
 <h1>SUMMIT CROWN</h1>
+<p>Private Community Access</p>
 
-<p>Elite Community. Private Network. Premium Services.</p>
+<input type="password" id="password"
+placeholder="Enter Password">
 
-<a href="#" class="button">JOIN US</a>
+<br>
 
-<div class="section">
-
-<div class="card">
-<h2>Private Community</h2>
-<p>Exclusive access for selected members.</p>
-</div>
-
-<div class="card">
-<h2>Security</h2>
-<p>Maximum privacy and protection.</p>
-</div>
-
-<div class="card">
-<h2>Premium Services</h2>
-<p>Professional solutions for our members.</p>
-</div>
+<button onclick="checkPassword()">
+Login
+</button>
 
 </div>
+
+
+<div id="site">
+
+<h1>Welcome to Summit Crown</h1>
+
+<p>Access Granted.</p>
+
+</div>
+
+
+<script>
+
+function checkPassword(){
+
+var password =
+document.getElementById("password").value;
+
+if(password === "summit2026"){
+
+document.getElementById("login").style.display="none";
+document.getElementById("site").style.display="block";
+
+}else{
+
+alert("Wrong password");
+
+}
+
+}
+
+</script>
 
 </body>
 </html>
